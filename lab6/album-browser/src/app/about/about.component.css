@@ -1,0 +1,14 @@
+﻿.page {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 720px;
+}
+
+.info {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  display: grid;
+  gap: 0.5rem;
+}

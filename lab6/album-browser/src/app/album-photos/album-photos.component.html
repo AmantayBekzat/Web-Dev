@@ -1,0 +1,22 @@
+﻿<section class="page">
+  <header class="page-header">
+    <h1>Album #{{ albumId() }} Photos</h1>
+    <a *ngIf="albumId()" class="link" [routerLink]="['/albums', albumId()]">
+      Back
+    </a>
+  </header>
+
+  <div *ngIf="isLoading()" class="loading">Loading photos...</div>
+  <div *ngIf="error()" class="error">{{ error() }}</div>
+
+  <div *ngIf="!isLoading() && !error()" class="photo-grid">
+    <figure *ngFor="let photo of photos()" class="photo-card">
+      <img
+        [src]="photo.thumbnailUrl"
+        [alt]="photo.title"
+        (error)="onImageError($event, photo)"
+      />
+      <figcaption>{{ photo.title }}</figcaption>
+    </figure>
+  </div>
+</section>

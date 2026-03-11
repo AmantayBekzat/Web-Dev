@@ -1,0 +1,28 @@
+﻿<section class="page">
+  <div *ngIf="isLoading()" class="loading">Loading album...</div>
+  <div *ngIf="error()" class="error">{{ error() }}</div>
+
+  <div *ngIf="!isLoading() && album()" class="detail-card">
+    <header>
+      <h1>Album #{{ album()!.id }}</h1>
+      <p class="muted">User ID: {{ album()!.userId }}</p>
+    </header>
+
+    <label for="title">Title</label>
+    <input
+      id="title"
+      [ngModel]="editableTitle()"
+      (ngModelChange)="editableTitle.set($event)"
+    />
+
+    <div class="actions">
+      <button type="button" class="primary" (click)="onSave()">Save</button>
+      <a class="secondary" [routerLink]="['/albums', album()!.id, 'photos']">
+        View Photos
+      </a>
+      <a class="link" routerLink="/albums">Back</a>
+    </div>
+
+    <div *ngIf="saveMessage()" class="success">{{ saveMessage() }}</div>
+  </div>
+</section>

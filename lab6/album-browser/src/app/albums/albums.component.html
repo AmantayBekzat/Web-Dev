@@ -1,0 +1,25 @@
+﻿<section class="page">
+  <div class="page-header">
+    <h1>Albums</h1>
+    <p class="muted">Browse all albums from JSONPlaceholder.</p>
+  </div>
+
+  <div *ngIf="isLoading()" class="loading">Loading albums...</div>
+  <div *ngIf="error()" class="error">{{ error() }}</div>
+
+  <ul *ngIf="!isLoading() && !error()" class="album-list">
+    <li *ngFor="let album of albums()" class="album-item">
+      <a class="album-link" [routerLink]="['/albums', album.id]">
+        <span class="album-id">#{{ album.id }}</span>
+        <span class="album-title">{{ album.title }}</span>
+      </a>
+      <button
+        type="button"
+        class="danger"
+        (click)="onDelete(album, $event)"
+      >
+        Delete
+      </button>
+    </li>
+  </ul>
+</section>

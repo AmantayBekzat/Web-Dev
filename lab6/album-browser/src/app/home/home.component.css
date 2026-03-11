@@ -1,0 +1,27 @@
+﻿.page {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 720px;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: #4b5563;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  background: #1d4ed8;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.primary:hover {
+  background: #1e40af;
+}

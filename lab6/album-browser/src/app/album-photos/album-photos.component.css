@@ -1,0 +1,56 @@
+﻿.page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.photo-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.photo-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.photo-card figcaption {
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.link {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.loading {
+  padding: 1rem;
+  border-radius: 12px;
+  background: #f1f5f9;
+}
+
+.error {
+  padding: 1rem;
+  border-radius: 12px;
+  background: #fee2e2;
+  color: #b91c1c;
+}
