@@ -1,5 +1,7 @@
+
 from django.urls import path
 from . import views
+from api.views import home
 
 urlpatterns = [
     path('', views.home),
@@ -8,4 +10,5 @@ urlpatterns = [
     path('categories/', views.category_list),
     path('categories/<int:id>/', views.category_detail),
     path('categories/<int:id>/products/', views.products_by_category),
+    path('create_product/', views.create_product),
 ]
